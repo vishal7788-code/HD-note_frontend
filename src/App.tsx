@@ -1,13 +1,19 @@
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Login from './components/auth/Login'
 import Signup from './components/auth/Signup'
+import Dashboard from './components/Dashboard'
 
 
 
 const appRouter = createBrowserRouter([
   {
+path:"/",
+element:<Navigate to="/signup"/>
+  },
+  {
+
     path: "/Signin",
     element: <Login />
   },
@@ -15,7 +21,10 @@ const appRouter = createBrowserRouter([
     path: "/Signup",
     element: <Signup />
   },
-
+  {
+    path: "/dashboard",
+    element: <Dashboard />
+  },
 ])
 function App() {
 

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Note{
+export interface Note{
     _id:string;
     userId:string;
     Title:string;
@@ -22,8 +22,11 @@ interface NoteState {
   initialState,
   reducers: {
     setNotes: (state, action: PayloadAction<Note[]>) => {
-        state.notes = action.payload;}
+        state.notes = action.payload;},
+        addNote: (state, action: PayloadAction<Note>) => {
+          state.notes.push(action.payload); // Add the new note to the existing array
+        },
   }})
 
-  export const { setNotes } = notesSlice.actions;
+  export const { setNotes, addNote } = notesSlice.actions;
   export default notesSlice.reducer;

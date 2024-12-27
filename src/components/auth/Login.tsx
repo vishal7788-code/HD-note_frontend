@@ -86,9 +86,9 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center lg:mt-10 mx-auto relative">
-      <div className="lg:max-w-4xl lg:my-auto flex flex-col border-2 lg:flex-row w-full  rounded-xl">
+      <div className="lg:max-w-4xl lg:my-auto flex flex-col lg:border-2 lg:flex-row w-full  rounded-xl">
         {/* Logo */}
-        <span className="lg:w-[5vw] w-[30vw] relative lg:top-2 lg:left-2 mt-4 lg:mt-0 mx-auto">
+        <span className="lg:w-[5vw] w-[30vw] relative left-5 lg:top-2 lg:left-2 mt-4 lg:mt-0 mx-auto">
           <img src={logo} alt="Logo" className="lg:w-[8vw] w-[20vw]" />
         </span>
 
