@@ -59,8 +59,11 @@ const Signup: React.FC = () => {
       const res = await axios.post(`${import.meta.env.VITE_USER_API_ENDPOINT}/signup`, {
         ...formData,
         otp,
-      },
         
+      },
+        {
+          withCredentials:true
+        }
       );
       if (res.data.success) {
         dispatch(setUser(res.data.user))
@@ -68,9 +71,8 @@ const Signup: React.FC = () => {
         navigate("/dashboard");
       }
     } catch (error) {
-      console.error("Signup failed:", (error as Error).message);
       if (axios.isAxiosError(error)) {
-        toast.error(error.response?.data?.error?.message);
+        toast.error(error.response?.data?.message);
       
       }
     } finally {

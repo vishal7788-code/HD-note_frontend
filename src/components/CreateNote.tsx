@@ -1,12 +1,10 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { FaSpinner } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { setNotes } from "../redux/notesSlice";
-import { RootState } from "../redux/store"; 
-
-
+import { RootState } from "../redux/store";
 
 const CreateNote: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,16 +22,22 @@ const CreateNote: React.FC = () => {
   if (!user) {
     return;
   }
-  
+
   const userId = user.userId;
+
   const saveNote = async () => {
     if (title && content) {
       setLoading(true);
       setError(null);
+      console.log("User ID:", userId);
       try {
-        const res= await axios.post(
+        const res = await axios.post(
           `${import.meta.env.VITE_NOTE_API_ENDPOINT}/createnote`,
-          { Title: title, Content: content },
+          {
+            Title: title,
+            Content: content,
+            userId: userId,
+          },
           {
             headers: {
               "Content-Type": "application/json",
@@ -46,6 +50,7 @@ const CreateNote: React.FC = () => {
           toast.success(res.data.message);
           setTitle('');
           setContent('');
+          
           const updatedRes = await axios.get(
             `${import.meta.env.VITE_NOTE_API_ENDPOINT}/allnotes/${userId}`,
             {
@@ -66,7 +71,9 @@ const CreateNote: React.FC = () => {
       } catch (error) {
         if (axios.isAxiosError(error)) {
           toast.error(error.response?.data.message );
-        } 
+        } else {
+          toast.error("An unexpected error occurred.");
+        }
       } finally {
         setLoading(false);
       }

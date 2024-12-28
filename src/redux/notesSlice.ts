@@ -24,7 +24,7 @@ interface NoteState {
     setNotes: (state, action: PayloadAction<Note[]>) => {
         state.notes = action.payload;},
         addNote: (state, action: PayloadAction<Note>) => {
-          state.notes.push(action.payload); // Add the new note to the existing array
+          state.notes.push(action.payload); 
         },
   }})
 
