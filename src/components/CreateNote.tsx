@@ -29,7 +29,6 @@ const CreateNote: React.FC = () => {
     if (title && content) {
       setLoading(true);
       setError(null);
-      console.log("User ID:", userId);
       try {
         const res = await axios.post(
           `${import.meta.env.VITE_NOTE_API_ENDPOINT}/createnote`,

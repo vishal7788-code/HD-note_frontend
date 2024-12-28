@@ -15,7 +15,6 @@ const useGetUserNotes = () => {
     }
 
     const getUserNotes = async () => {
-      console.log("Fetching notes for user ID:", user.userId);
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_NOTE_API_ENDPOINT}/allnotes/${user.userId}`,
@@ -26,7 +25,6 @@ const useGetUserNotes = () => {
 
         if (res.data.success) {
           const notes = res.data.notes;
-          console.log("Fetched notes:", notes);
           dispatch(setNotes(notes));
         }
       } catch (err) {
