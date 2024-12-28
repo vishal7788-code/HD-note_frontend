@@ -50,7 +50,7 @@ const Notes: React.FC<NotesProps> = ({ notes }) => {
             return (
               <div
                 key={note._id}
-                className="cursor-pointer lg:max-w-3xl shadow-lg shadow-gray-300 rounded-lg text-lg font-semibold mx-auto sm:mx-9 p-3 hover:text-blue-700 flex justify-between items-center flex-row sm:flex-row"
+                className="cursor-pointer lg:max-w-3xl md:max-w-[85vw] shadow-lg shadow-gray-300 rounded-lg text-lg font-semibold mx-auto sm:mx-9 p-3 hover:text-blue-700 flex justify-between items-center flex-row sm:flex-row"
               >
                 <h3
                   onClick={() => handleTitleClick(note)}

@@ -80,7 +80,7 @@ const CreateNote: React.FC = () => {
       {/* Button to open the popover */}
       <button
         onClick={togglePopover}
-        className="bg-blue-700 w-[92%] mx-2 md:mx-14 md:w-[84%] lg:w-[82%] lg:mx-[4rem] text-white font-semibold py-2 px-4 rounded-lg"
+        className="bg-blue-700 w-[92%] mx-2 md:mx-16 md:w-[84%] lg:w-[82%] lg:mx-[4rem] text-white font-semibold py-2 px-4 rounded-lg"
       >
         Create Note
       </button>
