@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setNotes } from "../redux/notesSlice";
-import { RootState } from "../redux/store"; // Ensure the correct path
+import { RootState } from "../redux/store";
 
 const useGetUserNotes = () => {
   const { user } = useSelector((store: RootState) => store.auth);

@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setLoading, setUser } from "../../redux/authSlice";
-import { FaSpinner } from "react-icons/fa"; // Import the FaSpinner icon
+import { FaSpinner } from "react-icons/fa";
 
 const Login: React.FC = () => {
   const [input, setInput] = useState({ email: "", OTP: "" });
