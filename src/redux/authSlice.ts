@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-//  user type
+// User type definition
 interface User {
   userId: string;
   email: string;
   name?: string;
 }
 
-//  state structure
+// State structure
 interface AuthState {
   loading: boolean;
   user: User | null;
@@ -24,19 +24,20 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    // Set loading state
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
-    setUser: (state, action: PayloadAction<User | null>) => {
-      state.user = action.payload;
-      state.isAuthenticated = !!action.payload;
-
-    },
     
-
+    // Set user state
+    setUser: (state, action: PayloadAction<User | null>) => {
+      const user = action.payload;
+      state.user = user;
+      state.isAuthenticated = !!user;  // Simplified check for authentication
+    },
   },
 });
 
-export const { setLoading, setUser } = authSlice.actions;
+export const { setLoading, setUser} = authSlice.actions;
 
 export default authSlice.reducer;

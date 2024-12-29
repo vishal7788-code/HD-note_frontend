@@ -26,6 +26,7 @@ const useGetUserNotes = () => {
         if (res.data.success) {
           const notes = res.data.notes;
           dispatch(setNotes(notes));
+          return;
         }
       } catch (err) {
         console.error("Error from getting notes:", err);
