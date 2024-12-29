@@ -183,11 +183,11 @@ const Signup: React.FC = () => {
         </div>
 
         {/* Image Section */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block p-3">
           <img
             src={container}
             alt="Login"
-            className="w-[60vw] h-[94vh] object-cover p-3 rounded-xl"
+            className="w-[60vw] h-[94vh] object-cover  rounded-xl"
           />
         </div>
       </div>
